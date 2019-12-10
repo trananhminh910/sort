@@ -1,0 +1,401 @@
+
+	 	* {
+	 		margin:0;
+	 		padding: 0;
+	 		box-sizing: border-box;
+	 		font-family: arial, sans-serif;
+	 	}
+	 	header {
+	 		display: flex;
+	 		flex-flow: row wrap
+	 	}
+	 	header .logo {
+	 		margin-left:10%;
+
+	 	}
+	 	.team {
+	 		font-size: 2.5em;
+	 		line-height:2em;
+	 		padding-left: 30px;
+	 		color:#0000cc;
+	 		text-shadow: 1px 1px #D3D9F9;
+	 		text-align: center;
+			margin:0 auto;
+	 	}
+		
+		nav.horizontal {
+			background-color: black;
+
+		}
+		nav.vertical {
+			position: fixed;
+			height: 100%;
+			background-color: black;
+			overflow: auto;
+		}
+		nav.vertical li {
+			padding: 6px;
+			list-style: none;
+		}
+		nav.vertical a {
+			text-decoration: none;
+		}
+		nav.vertical span {
+			color: white;
+			position: absolute;
+			right: 5px;
+			font-size: 2em;
+			top: 30%;
+		}
+		nav.vertical span.icon-left {
+			display: block;
+			cursor: pointer;
+			background-color: black;
+
+		}
+		span.icon-right {
+			display: none;
+			font-size: 2em;
+			cursor: pointer;
+			position: fixed;
+			left: 5px;
+			font-size: 2em;
+			top: 50%;
+		}
+		span.icon-left:hover, span.icon-right:hover {
+			color: #ffc107;
+		}
+		.list-child {
+			padding: 20px;		
+		}
+		.image {
+		}
+		.wrapper {
+			display: flex;
+			flex-flow: column wrap;
+		}
+		.content {
+			/*border:1px solid black;*/
+			margin-left: 20%;	
+			
+		}
+		.members {
+			display:  flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		.card {
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+		.card-img-top:hover {
+			opacity: 0.6;
+		}
+		.member-more {
+			position: fixed;	
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			opacity: 1;
+			background-color: #383535;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			align-items: center;
+			display: none;
+			-webkit-animation-name: zoom;
+			 -webkit-animation-duration: 0.6s;
+			 animation-name: zoom;
+			 animation-duration: 0.6s;
+		}
+		@-webkit-keyframes zoom {
+		  from {-webkit-transform:scale(0)} 
+		  to {-webkit-transform:scale(1)}
+		}
+
+		@keyframes zoom {
+		  from {transform:scale(0)} 
+		  to {transform:scale(1)}
+		}
+		.frame-member-more {
+			background-color: #eee;
+			height: 70%;
+		}
+		.frame-image-member-more {
+			height: 60%;
+			margin:0 auto;
+			margin-top: 5px;
+		}
+		.frame-image-member-more>img {
+			height: 100%;
+		}
+		.close-button {
+			font-size: 2.5em;
+			position: absolute;
+			right: 15px;
+			top: 3px;
+			cursor: pointer;
+		}
+
+		.close-button:hover {
+			color: red;
+		}
+		.profile {
+			font-size: 1.2em;
+			cursor: pointer;
+		}
+		.parent-link {
+			border-left: 5px solid #ffc107;
+			padding-left: 15px;
+			color: white;
+		}
+		.child-link {
+			border-left: 5px solid #3DB23D;
+			padding-left: 15px;
+			margin-left: 15px;
+			color: white;
+			font-size: 1em;
+		}
+		.nav-item,.fa-home {
+			background-color: #2570BF;
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		.nav-item {
+			border-right: 1px solid black;
+			padding:0 10px;
+		}
+		.nav-item:hover {
+			text-decoration: underline;
+		}
+		.list-ver, 
+		.list-child {
+			background-color: black;
+			color: black;		
+		}
+		.list-child {
+			padding: 0;
+		}
+		li>a:hover {
+			color:#ffc107;
+			text-decoration: underline;
+			transition: all 0.3s;
+		}
+		.fa-caret-square-up {
+			position: fixed;
+			right: 15px;
+			bottom: 70px;
+			font-size: 3em;
+			cursor: pointer;
+		}
+		.fa-caret-square-up:hover {
+			transition: all 0.5s;
+			opacity: .7;
+		}
+		.bolder {
+			font-weight: bolder;
+		}
+		@media only screen and (max-width: 1230px) {
+			.team {
+				font-size: 2em;
+				padding-left: 50px;
+			}
+		}
+		@media only screen and (max-width: 1090px) {
+			.team {
+				font-size: 1.5em;
+				margin: 0 auto;
+				padding: 0;
+			}
+			.logo {
+				display: none;
+			}
+			
+			.icon-right {
+				display: none;
+			}
+			
+		}
+		@media only screen and (max-width: 690px) {
+			.nav-horizontal {
+				display: flex;
+				flex-flow: column wrap;
+				justify-content: center;
+			}
+			
+			.frame-image-member-more>img {
+				display: none;
+			}
+
+			.nav-item {
+				border: none;
+			}
+		}
+		@media only screen and (max-width: 450px) {
+			.team {
+				font-size: .7em;
+				margin: 0 auto;
+				padding: 0;
+			}
+			.logo {
+				display: none;
+			}
+			.vertical {
+				display: none;
+			}
+			.content {
+				position: absolute;
+				left: -7%;
+			}
+		}
+		/*table {
+			background-color: white;
+			color: white;
+		}*/
+		.to-inline {
+			display: inline;
+		}
+		.code-container {
+			border:5px double #928B8B;
+		}
+		.code {
+			font-size: 1em;
+			margin-left: 10px;
+			padding: 5px;
+		}
+
+		/*slide show Phan cong & thuc hien*/
+		.slide-show-container {
+			  position: relative;
+			}
+
+			/* Hide the images by default */
+			.mySlides {
+			  display: none;
+			}
+
+			/* Add a pointer when hovering over the thumbnail images */
+			.cursor {
+			  cursor: pointer;
+			}
+
+			/* Next & previous buttons */
+			.prev,
+			.next {
+			  cursor: pointer;
+			  position: absolute;
+			  top: 60%;
+			  width: auto;
+			  padding: 16px;
+			  margin-top: -50px;
+			  color: white;
+			  font-weight: bold;
+			  font-size: 20px;
+			  border-radius: 0 3px 3px 0;
+			  user-select: none;
+			  -webkit-user-select: none;
+			}
+
+			/* Position the "next button" to the right */
+			.next {
+			  right: 0;
+			  border-radius: 3px 0 0 3px;
+			}
+
+			/* On hover, add a black background color with a little bit see-through */
+			.prev:hover,
+			.next:hover {
+			  background-color: rgba(0, 0, 0, 0.8);
+			}
+
+			/* Number text (1/3 etc) */
+			.numbertext {
+			  color: #f2f2f2;
+			  font-size: 12px;
+			  padding: 8px 12px;
+			  position: absolute;
+			  top: 0;
+			}
+
+			/* Container for image text */
+			.caption-container {
+			  text-align: center;
+			  background-color: #222;
+			  padding: 2px 16px;
+			  color: white;
+			}
+
+			.row:after {
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+
+			/* Six columns side by side */
+			.column {
+			  float: left;
+			  width: 16.66%;
+			}
+
+			/* Add a transparency effect for thumnbail images */
+			.demo {
+			  opacity: 0.6;
+			}
+
+			.active,
+			.demo:hover {
+			  opacity: 1;
+			}
+
+			.title-item {
+				color: #444;
+				text-shadow: 
+					1px 0px 1px #ccc, 0px 1px 1px #eee, 
+					2px 1px 1px #ccc, 1px 2px 1px #eee,
+					3px 2px 1px #ccc, 2px 3px 1px #eee,
+					4px 3px 1px #ccc, 3px 4px 1px #eee,
+					5px 4px 1px #ccc, 4px 5px 1px #eee,
+					6px 5px 1px #ccc, 5px 6px 1px #eee,
+					7px 6px 1px #ccc;
+
+			}
+	/*Iplement*/
+	/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#bai1 {background-color: #FFEEEE;}
+#bai2 {background-color: #ECFCEC;}
+#bai3 {background-color: #F0F0FE;}
+#bai4 {background-color: #FDF8F0;}
+#bai5{background-color: #FBEAFB;}
