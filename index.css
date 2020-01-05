@@ -25,7 +25,6 @@
 		
 		nav.horizontal {
 			background-color: black;
-			
 
 		}
 		nav.vertical {
@@ -160,7 +159,7 @@
 			font-size: 1em;
 		}
 		.nav-item,.fa-home {
-			background-color: #DD2020;
+			background-color: #2570BF;
 			font-size: 1.1em;
 			font-weight: bold;
 		}

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +15,7 @@
 	<header>
 		<div class="team">Nhóm 4 Chiều Thứ 4 Môn CTDL & GT</div>
 	</header>
-	<nav class="nav-horizontal navbar navbar-expand-sm  bg-success col-12">
+	<nav class="nav-horizontal navbar navbar-expand-sm  bg-info col-12">
 	  
 	  <ul class="navbar-nav bg-info" >
 	  	<li class="nav-item">
@@ -52,7 +51,6 @@
 				<li class="list-ver"><a href="#works" class="parent-link">Phân Công</a></li>
 				<li class="list-ver"><a href="#image" class="parent-link">Hình Ảnh</a></li>
 				<li class="list-ver"><a href="#code" class="parent-link">Thực Hiện</a></li>
-				<li class="list-ver"><a href="#video" class="parent-link">Video-clip</a></li>
 				<li class="list-ver"><a href="#test" class="parent-link">Test</a>
 					<ul>
 						<li class="list-child"><a href="#test1" class="child-link">Test-1</a></li>
@@ -64,6 +62,7 @@
 				</li>
 				<li class="list-ver"><a href="#comment" class="parent-link">Nhận Xét</a></li>
 				<li class="list-ver"><a href="#evaluate" class="parent-link">Đánh Giá</a></li>
+				<li class="list-ver"><a href="https://trananhminh910.github.io/OpenGift/" class="parent-link" target="_blank">Giải Trí</a></li>
 			</ul>
 		</nav>
 		<div class="content col-9">
@@ -202,27 +201,27 @@
 			      <tr>
 			        <td>1</td>
 			        <td>Trần Anh Minh</td>
-			        <td>Nén tập tin</td>
+			        <td>Sắp xếp chèn</td>
 			      </tr>
 			      <tr>
 			        <td>2</td>
 			        <td>Lê Sỹ Duy Khải</td>
-			        <td>Đối sánh mẫu</td>
+			        <td>Nổi bọt</td>
 			      </tr>
 			      <tr>
 			        <td>3</td>
 			        <td>Nguyễn Duy Cường</td>
-			        <td>Mật mã</td>
+			        <td>Quick sort</td>
 			      </tr>
 			      <tr>
 			        <td>4</td>
 			        <td>Lê Đăng Quỳnh</td>
-			        <td>Sắp xếp bằng trộn</td>
+			        <td>Chọn trực tiếp</td>
 			      </tr>
 			      <tr>
 			        <td>5</td>
 			        <td>Thu Trang</td>
-			        <td>Tìm kiếm chuỗi</td>
+			        <td>Sắp xếp trộn</td>
 			      </tr>
 			    </tbody>
 			  </table>
@@ -291,191 +290,209 @@
 			<br />
 			<h2 id="code" class="title-item">THỰC HIỆN</h2>
 			<div class="implement">
-				<button class="tablink" onclick="openPage('bai1', this, 'red')" id="defaultOpen">Tìm kiếm chuỗi</button>
-				<button class="tablink" onclick="openPage('bai2', this, 'green')" >Nén tệp tin</button>
-				<button class="tablink" onclick="openPage('bai3', this, 'blue')">Trộn</button>
-				<button class="tablink" onclick="openPage('bai4', this, 'orange')">Mã hóa</button>
-				<button class="tablink" onclick="openPage('bai5', this, 'violet')">Đối sánh mẫu</button>
+				<button class="tablink" onclick="openPage('bai1', this, 'red')" id="defaultOpen">Chèn</button>
+				<button class="tablink" onclick="openPage('bai2', this, 'green')" >Nổi bọt</button>
+				<button class="tablink" onclick="openPage('bai3', this, 'blue')">Quick sort</button>
+				<button class="tablink" onclick="openPage('bai4', this, 'orange')">Trộn</button>
+				<button class="tablink" onclick="openPage('bai5', this, 'violet')">Chọn trực tiếp</button>
 
 				<div id="bai1" class="tabcontent">
 					<textarea class="col-12" style="height:600px;">
 #include <stdio.h>
-#include <string.h>
-char *TimKiem (char *s1 ,char *s2){
-
-int n = 0;
-   int m = 0;
-   int times = 0;
-   int len = strlen(s2);      // bien luu giu do dai cua chuoi can tim kiem
-
-   while(s1[n] != '\0') {
-
-      if(s1[n] == s2[m]) {     // neu ky tu dau tien la giong nhau
-
-         // tiep tuc tim kiem
-
-         while(s1[n] == s2[m]  && s1[n] !='\0') {
-            n++;
-            m++;
-         }
-
-         // Neu day ky tu nay co do dai bang chuoi tim kiem
-         if(m == len && (s1[n] == ' ' || s1[n] == '\0')) {
-
-            // Chuc mung ban da tim ra chuoi can tim
-            times++;
-         }
-      }else {            // Neu ky tu dau tien khong giong nhau
-         while(s1[n] != ' ') {        //bo qua, tiep tuc tim kiem tu tiep theo
-            n++;
-            if(s1[n] == '\0')
-            break;
-         }
-      }
-		
-      n++;
-      m=0;  // reset bien dem.
-   }
-
-   if(times > 0) {
-      printf("Chuoi '%s' xuat hien %d lan\n", s2, times);
-   }else {
-      printf("Chuoi '%s' khong co mat trong cau.\n", s2);
-   }
-
-   return 0;
+void nhap(int a[],int &n)
+{
+	printf("Nhap so phan tu: ");
+	scanf("%d" ,&n);
+	printf("\nNhap day so:\n");
+	for(int i=1;i<=n;++i)
+	{
+		printf("So thu %d: " ,i);
+		scanf("%d" ,&a[i]);
+	}
 }
- main() {
-   char s1[] = "Mon CTDL & GT co Hoang Thi My Le ";
-   char s2[] = "CTDL";
-   printf (" ",TimKiem (s1 ,s2));
+void display(int a[], int n)
+{
+	for(int i=1;i<=n;++i)
+	{
+		printf(" %d ",a[i]);
+	}
+}
+void chen(int a[], int iI)
+{
+	for(int i=1;i<=iI;++i)
+	{
+		if(a[i]>=a[iI+1])
+			{
+				int tg=a[iI+1];
+				for(int j=iI+1;j>i;--j)
+				{
+					a[j]=a[j-1];
+				}
+				a[i]=tg;
+				break;
+			}
+	}
+}
+void sapxep(int a[],int n)
+{
+	for(int iI=1;iI<n;++iI)
+	{
+		if(a[iI]>a[iI+1])
+		{
+			chen(a,iI);
+			printf("\n\n * iI=%d: " ,iI);
+			display(a,n);
+		}	
+	}
+}
+main()
+{
+	int a[100], n;
+	printf("--------Thuat Toan Sap Xep Bang Phuong Phap Chen----------\n\n");
+	nhap(a,n);
+	if(n<=0)
+	{
+		return 0;		
+	}
+	printf("\n\n Day so: ");
+	display(a,n);
+	printf("\n\n Mo ta qua trinh:");
+	sapxep(a,n);
+	printf("\n\n Day so da sap xep: ");
+	display(a,n);
 }
 					</textarea>
 				</div>
 
 				<div id="bai2" class="tabcontent">
 					<textarea class="col-12" style="height:600px;">
-
-#include<stdio.h>
-#include<conio.h>
-#include<string.h>
-
-void Nenchuoi(char str1[],char str2[])
+#include <stdio.h>
+void nhap(int a[],int &n)
 {
-	char kytu[2];
-	int dem=0, demkytu=1;
-	for(int i=0;i<strlen(str1);i++)
+	printf("Nhap so phan tu: ");
+	scanf("%d" ,&n);
+	printf("\nNhap day so:\n");
+	for(int i=1;i<=n;++i)
 	{
-		
-		if(str1[i]==str1[i+1])
-			demkytu=demkytu+1;
-		else
+		printf("So thu %d: " ,i);
+		scanf("%d" ,&a[i]);
+	}
+}
+void display(int a[], int n)
+{
+	for(int i=1;i<=n;++i)
+	{
+		printf(" %d ",a[i]);
+	}
+}
+void hoanvi(int &x, int &y)
+{
+	int tg=x;
+	x=y;
+	y=tg;
+}
+void sapxep(int a[],int n)
+{
+	for(int i=1;i<n;++i)
+	{
+		for(int j=n;j>i;--j)
 		{
-			sprintf(kytu,"%d",demkytu);
-			if(demkytu!=1)
+			if(a[j]<a[j-1])
 			{
-				str2[dem]=kytu[0];
-				str2[dem+1]=str1[i];
-				dem=dem+2;
-			}
-			else
-			{
-				str2[dem]=str1[i];
-				dem=dem+1;
-			}
-			demkytu=1;
+				hoanvi(a[j],a[j-1]);
+				printf("\n\n * i=%d j=%d: " ,i ,j);
+				display(a,n);
+			}			
 		}
 	}
-	str2[dem]='\0';
 }
 main()
 {
-	char str1[30],str2[30];
-	fflush(stdin);
-	printf("Nhap chuoi:");
-	gets(str1);
-	Nenchuoi(str1,str2);
-	printf("Chuoi da nen: %s",str2);
-	getch();
-}
-
+	int a[100], n;
+	printf("---------Thuat Toan Sap Xep Noi Bot---------\n\n");
+	nhap(a,n);
+	if(n<=0)
+	{
+		return 0;		
+	}
+	printf("\n\n Day so: ");
+	display(a,n);
+	printf("\n\n Mo ta qua trinh: ");
+	sapxep(a,n);
+	printf("\n\n Day so da sap xep: ");
+	display(a,n);
+}						
 					</textarea>
 				</div>
 
 				<div id="bai3" class="tabcontent">
 					<textarea class="col-12" style="height:600px;">
-#include<stdio.h>
-#include<String.h>
-	struct ten{
-		char z[10];
-	};
-void SXtron(ten ds[],ten a[],ten b[],int m,int n,int &k)
+#include <stdio.h>
+
+void nhap(int a[],int &n)
 {
-	int i=1,j=1,p;
-    k=1;
-    while(m>=i&&n>=j)
-    {
-    	if(strcmp(a[i].z,b[j].z)<=0)
-    	{
-    		ds[k]=a[i];
-    		i++;
-    	}
-    	else
-    	{
-    		ds[k]=b[j];
-    		j++;
-    	}
-    	k++;	
-    }
-    if(i<m)
-    {
-    	for(p=i;p<=m;p++)
-    	{
-    		ds[k]=a[p];
-    		k++;
-    	}
-    }
-    else
-        for(p=j;p<=n;p++)
-    	{
-    		ds[k]=b[p];
-    		k++;
-    	}
-}
-  void Out(ten ds[],int n)
-{
-	for(int i=1;i<=n;i++)
+	printf("Nhap so phan tu: ");
+	scanf("%d" ,&n);
+	printf("\nNhap day so:\n");
+	for(int i=1;i<=n;++i)
 	{
-		printf(" %10s ",ds[i].z);
+		printf("So thu %d: " ,i);
+		scanf("%d" ,&a[i]);
 	}
-	printf("\n");
-} 	
+}
+void display(int a[],int min, int max)
+{
+	for(int i=min;i<=max;++i)
+	{
+		printf(" %d ",a[i]);
+	}
+}
+void hoanvi(int &x, int &y)
+{
+	int tg=x;
+	x=y;
+	y=tg;
+}
+int tachmang(int a[],int min, int max)
+{
+	int pv=a[max], left=min, right=max-1;
+	while(true)
+	{
+		while(left<=right && a[left]<pv)
+			left++;
+		while(left<=right && a[right]>=pv)
+			right--;
+		if(left>right)
+			break;
+		hoanvi(a[left],a[right]);
+		left++;
+		right--;
+	}
+	hoanvi(a[left],a[max]);
+	return left;
+}
+void SapXep(int a[], int min, int max,int i)
+{
+	if(min<max)
+	{
+		printf("\nDay so can sap xep cap %d: \nPV=%d Left=%d Right=%d :" ,i ,max ,min ,max-1);
+		display(a,min,max);
+		int x=tachmang(a,min,max);
+		SapXep(a,min,x-1,i+1);
+		SapXep(a,x+1,max,i+1);
+	}
+}
 main()
 {
-	ten a[10],b[10],c[20];
-	int k,m,n;
-	printf("Nhap so danh sach a : ");
-	scanf("%d",&m);
-	printf("\nNhap danh sach a \n");
-	for(int i=1;i<=m;i++)
-	{
-		fflush(stdin);
-		printf("Nhap ten thu %d : ",i);
-		gets(a[i].z);
-	}
-	printf("\nNhap so danh sach b : ");
-	scanf("%d",&n);
-	printf("Nhap danh sach b \n ");
-	for(int j=1;j<=n;j++)
-	{
-		fflush(stdin);
-		printf("Nhap ten thu %d : ",j);
-		gets(b[j].z);
-	}
-	SXtron(c,a,b,m,n,k);
-	printf("\n Danh sach sau khi sap xep la : \n");
-	Out(c,k-1);
-  
+	int a[100], n;
+	printf("---------Thuat Toan Sap Xep Quick Sort---------\n\n");
+	nhap(a,n);
+	printf("\n\nDay so: ");
+	display(a,1,n);
+	printf("\n\nMo ta qua trinh: ");
+	SapXep(a,1,n,1);
+	printf("\n\nDay so da sap xep: ");
+	display(a,1,n);
 }
 					</textarea>
 				</div>
@@ -483,43 +500,99 @@ main()
 				<div id="bai4" class="tabcontent">
 					<textarea class="col-12" style="height:600px;">
 #include <stdio.h>
-#include <conio.h>
-#include <string.h>
-char *Proccess(char *input, int k)
+
+void nhap(int a[],int &n)
 {
-    char *temp = new char[1000]; 
-	strcpy(temp,input);
-    for (int i=0; i<strlen(temp); i++)
+	printf("\n- Nhap so phan tu: ");
+	scanf("%d" ,&n);
+	for(int i=1;i<=n;++i)
 	{
-        int x = (int)temp[i]; 
-        int y = x+k%26; //26 chu cai
-        int sp; 
-        if (x>64 && x<91) //chu cai in trong ascii
-            sp=0; 
-        else 
-			if (x>96 && x<123) //chu cai thuong trong ascii
-            	sp=32; 
-	        else 
-	            y=x; 
-	    if (y>=90+sp) 
-			y=y-k;
-	    else 
-			if (y<=65+sp) 
-				 y=y+k; 
-    	temp[i] = (char)y; 
-    } 
-    return temp; 
-} 
-char *Encrypt(char *input, int k) //k la ma dich vong
-{ 
-    return Proccess(input,k); 
-} 
- 
-main(){ 
-    char str[]="CODERSPKT@GMAIL"; 
-     printf("Chuoi truoc khi ma hoa : %s",str); 
-    printf("\nChuoi sau khi ma hoa: %s \n",Encrypt(str,3));
-    getch();
+		printf(" + So thu %d: " ,i);
+		scanf("%d" ,&a[i]);
+	}
+}
+void display(int a[], int n)
+{
+	for(int i=1;i<=n;++i)
+	{
+		printf(" %d ",a[i]);
+	}
+}
+void xoa(int a[], int n)
+{
+	for(int i=1;i<n;++i)
+	{
+		a[i]=a[i+1];
+	}
+}
+void sapxep(int a[],int b[], int c[],int n1, int n2)
+{
+	int k=1;
+	while(n1!=0 && n2!=0)
+	{
+		
+		if(a[1]<=b[1])
+		{
+			c[k]=a[1];
+			xoa(a,n1);
+			n1--;
+		}
+		else
+		{
+			c[k]=b[1];
+			xoa(b,n2);
+			n2--;
+		}
+		printf("\n\n *Cong doan %d: \n  - Day so 1: " ,k);
+		display(a,n1);
+		printf("\n  - Day so 2: ");
+		display(b,n2);
+		printf("\n  - Output: ");
+		display(c,k);
+		++k;
+	}
+	if(n1==0)
+	{
+		for(int i=1;i<=n2;++i)
+		{
+			c[k]=b[i];
+			++k;
+		}
+		
+		printf("\n\n *Cong doan cuoi: \n  - Day so 1: ");
+		printf("\n  - Day so 2: ");
+		printf("\n  - Output: ");
+		display(c,k-1);
+	}
+	else
+	{
+		for(int i=1;i<=n1;++i)
+		{
+			c[k]=a[i];
+			++k;
+		}
+		printf("\n\n *Cong doan cuoi: \n  - Day so 1: ");
+		printf("\n  - Day so 2: ");
+		printf("\n  - Output: ");
+		display(c,k-1);
+	}
+}
+main()
+{
+	int a[50],b[50],c[100],n1,n2;
+	printf("---------Thuat Toan Sap Xep Tron---------\n\n");
+	printf("- Day so 1: ");
+	nhap(a,n1);
+	printf("\n- Day so 2: ");
+	nhap(b,n2);
+	printf("\n\n- Day so 1: ");
+	display(a,n1);
+	printf("\n\n- Day so 2: ");
+	display(b,n2);
+	printf("\n\n* Minh hoa thuat toan: ");
+	sapxep(a,b,c,n1,n2);
+	printf("\n\n* Day so da sap xep: ");
+	display(c,n1+n2);
 }
 					</textarea>
 				  
@@ -527,48 +600,68 @@ main(){
 				<div id="bai5" class="tabcontent">
 					<textarea class="col-12" style="height:600px;">
 #include <stdio.h>
-#include <string.h>
-int DS(char [], char []);
-int DS(char VB[], char M[]) {
-	int c, d, e, DDVB, CDM, VT = -1;
-	DDVB    = strlen(VB);
-	CDM = strlen(M);
-	if (CDM > DDVB) {
-		return -1;
+void nhap(int a[],int &n)
+{
+	printf("Nhap so phan tu: ");
+	scanf("%d" ,&n);
+	printf("\nNhap day so:\n");
+	for(int i=1;i<=n;++i)
+	{
+		printf("So thu %d: " ,i);
+		scanf("%d" ,&a[i]);
 	}
-	for (c = 0; c <= DDVB - CDM; c++) {
-		VT = e = c;
-
-		for (d = 0; d < CDM; d++) {
-			if (M[d] == VB[e]) {
-				e++;
-			} else {
-				break;
+}
+void display(int a[], int n)
+{
+	for(int i=1;i<=n;++i)
+	{
+		printf(" %d ",a[i]);
+	}
+}
+void hoanvi(int &x, int &y)
+{
+	int tg=x;
+	x=y;
+	y=tg;
+}
+void sapxep(int a[],int n)
+{
+	for(int i=1;i<n;++i)
+	{
+		int min=a[i],vt=0;
+		for(int j=i+1;j<=n;++j)
+		{
+			if(min>a[j])
+			{
+				min=a[j];	
+				vt=j;
 			}
 		}
-		if (d == CDM) {
-			return VT;
+		if(min!=a[i])
+		{
+			hoanvi(a[i],a[vt]);
+			printf("\n\n * VT=%d: " ,i);
+			display(a,n);
 		}
+		
 	}
-	return -1;
 }
-main() {
-	char a[100], b[100];
-	int VT;
-	printf("Nhap Van Ban\n");
-	gets(a);
-	printf("Nhap Chuoi De Tim\n");
-	gets(b);
-	VT = DS(a, b);
-	if (VT != -1) {
-		printf("Tim Thay Tai Vi Tri: %d\n", VT + 1);
-	} else {
-		printf("Khong Tim Thay.\n");
+main()
+{
+	int a[100], n;
+	printf("--------Thuat Toan Sap Xep Chon Truc Tiep----------\n\n");
+	nhap(a,n);
+	if(n<=0)
+	{
+		return 0;		
 	}
-	return 0;
+	printf("\n\nDay so: ");
+	display(a,n);
+	printf("\n\nMo ta qua trinh:");
+	sapxep(a,n);
+	printf("\n\nDay so da sap xep: ");
+	display(a,n);
 }
-
-
 					</textarea>
 				  
 				</div>
@@ -576,40 +669,30 @@ main() {
 			<br />
 			<br />
 			<br />
-			<div id="video" style="text-align:center;margin:0 auto;">
-				<a href="https://www.youtube.com/watch?v=XRnfhyqDJEY" >
-					<button class="btn btn-warning">Nhấp để xem video</button>
-				</a>
-				<br>
-				<p style="text-align: center;">Video thuyết trình của nhóm</p>
-			</div>
-			<br />
-			<br />
-			<br />
 			<div id="test" class="test-container">
 				<h2 class="title-item" id="test">KIỂM TRA</h2>
 				<div class="test" id="test1">
-					<h4>1. Test Tìm kiếm chuỗi</h4>
+					<h4>1. Test chèn</h4>
 					<img src="test1.PNG" alt="test1" class="col-12">
 				</div>
 				<br />
 				<div class="test" id="test2">
-					<h4>2. Test nén tập tin</h4>
+					<h4>2. Test nổi bọt</h4>
 					<img src="test2.PNG" alt="test2" class="col-12">
 				</div>
 				<br>
 				<div class="test" id="test3">
-					<h4>3. Test sắp xếp bằng trộn</h4>
+					<h4>3. Test quick sort</h4>
 					<img src="test3.PNG" alt="test3" class="col-12">
 				</div>
 				<br>
 				<div class="test" id="test4">
-					<h4>4. Test mã hóa</h4>
+					<h4>4. Test trộn</h4>
 					<img src="test4.PNG" alt="test5" class="col-12">
 				</div>
 				<br />
 				<div class="test" id="test5">
-					<h4>5. Test đối sánh mẫu</h4>
+					<h4>5. Test Chọn trực tiếp</h4>
 					<img src="test5.PNG" alt="test5" class="col-12">
 				</div>
 				<br>
@@ -622,23 +705,23 @@ main() {
 				<h5><span class="fas fa-book-open"></span> Nhận xét:</h5>
 				<p>- Ngày đầu tiên các thành viên họp lại và phân chia công việc cho mỗi người</p>
 				<p>-Sau khi hoàn thành xong, Họp nhóm để tập trung các hàm lại hoàn thiện bài tập nhóm</p>
-				<p>-Bài tập rất khó khăn khi nhóm tìm tài liệu tham khảo, trong đó rất lâu mới có thể hoàn thành hết 5 bài</p>
+				<p>-Trong quá trình thực hiện nhóm hơi gặp vấn đề trong hàm chọn trực tiếp. Nhóm đã cùng nhau giải quyết vấn đề</p>
+				<p>- Đưa code lên trang gặp vấn đề khi thẻ pre trong html không thực hiện được thay vào đó chọn thẻ textarea để chứa code</p>
 				<h5><span class="fas fa-book-open"></span> Rút kinh nghiệm:</h5>
 				<p>-Cần chuẩn bị kỹ công việc mình được phân công trước lúc đi học nhóm</p>
 				<p>-Nên lắng nghe kỹ yêu cầu bài tập để tối ưu hóa thời gian</p>
-				<p>-Với những tài liệu kho kiếm nên tra google bằng tiếng anh</p>
 			</div>
 			<br />
 			<br />
 			<br />
 			<div id="evaluate" class="evaluate">
 				<h2 class="title-item">ĐÁNH GIÁ MỖI CÁ NHÂN</h2>
-				<p>Vì công việc được phân chia đều, mỗi thành viên đều có ý thức tham gia họp nhóm đầy đủ, tích cực đóng góp ý kiến nên sẽ chấm theo thang điểm ABC như sau:</p>
-				<p>- Lê Sỹ Duy Khải: A</p>
-				<p>- Trần Anh Minh: A</p>
-				<p>- Lê Đăng Quỳnh: A</p>
-				<p>- Nguyễn Duy Cường: A</p>
-				<p>- Thu Trang: A</p>
+				<p>Vì công việc được phân chia đều, mỗi thành viên đều có ý thức tham gia họp nhóm đầy đủ, tích cực đóng góp ý kiến nên sẽ chấm theo thang điểm 10 như sau:</p>
+				<p>- Lê Sỹ Duy Khải: 9</p>
+				<p>- Trần Anh Minh: 9</p>
+				<p>- Lê Đăng Quỳnh: 9</p>
+				<p>- Nguyễn Duy Cường: 9</p>
+				<p>- Thu Trang: 9</p>
 			</div>
 			<br>
 			<br>
